@@ -1,0 +1,21 @@
+name: echo-judged
+promptVersion: "2"
+modelId: echo
+promptTemplate: |
+  Answer the question concisely.
+  {{input}}
+params:
+  temperature: 0.0
+  maxTokens: 256
+scorers:
+  - EXACT_MATCH
+  - JUDGE
+judge:
+  model: fake-judge
+  labels: [PASS, FAIL]
+  labelScores:
+    PASS: 1.0
+    FAIL: 0.0
+  temperature: 0.0
+  rubric: |
+    PASS if correct and concise, matching the reference answer. FAIL otherwise.

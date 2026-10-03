@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.janus.ReporterTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2026-10-02T22:35:23" hostname="ip-10-0-4-125.eu-central-1.compute.internal" time="0.018">
+  <properties/>
+  <testcase name="html renders the verdict class()" classname="com.janus.ReporterTest" time="0.011"/>
+  <testcase name="junit has no failure when there is no regression()" classname="com.janus.ReporterTest" time="0.003"/>
+  <testcase name="junit emits a failure for a regression so CI goes red()" classname="com.janus.ReporterTest" time="0.002"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

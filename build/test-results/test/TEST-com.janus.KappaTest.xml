@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.janus.KappaTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2026-10-02T22:35:23" hostname="ip-10-0-4-125.eu-central-1.compute.internal" time="0.006">
+  <properties/>
+  <testcase name="split is deterministic and respects holdout fraction()" classname="com.janus.KappaTest" time="0.001"/>
+  <testcase name="confusion matrix diagonal counts agreement()" classname="com.janus.KappaTest" time="0.001"/>
+  <testcase name="chance-level agreement is kappa near zero()" classname="com.janus.KappaTest" time="0.001"/>
+  <testcase name="known kappa value from a worked 2x2 table()" classname="com.janus.KappaTest" time="0.001"/>
+  <testcase name="perfect agreement is kappa 1()" classname="com.janus.KappaTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

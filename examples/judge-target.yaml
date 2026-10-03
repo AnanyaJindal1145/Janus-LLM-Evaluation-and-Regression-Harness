@@ -1,0 +1,23 @@
+name: echo-judged
+promptVersion: "1"
+modelId: echo
+promptTemplate: |
+  Answer the question concisely.
+  {{input}}
+params:
+  temperature: 0.0
+  maxTokens: 256
+scorers:
+  - EXACT_MATCH
+  - JUDGE
+judge:
+  # fake-judge runs offline at $0; swap to a gemini model id + GEMINI_API_KEY for the real judge.
+  model: fake-judge
+  labels: [PASS, FAIL]
+  labelScores:
+    PASS: 1.0
+    FAIL: 0.0
+  temperature: 0.0
+  rubric: |
+    PASS if the response correctly and concisely answers the question,
+    matching the reference answer in meaning. FAIL otherwise.

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.janus.ComparatorTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2026-10-02T22:35:23" hostname="ip-10-0-4-125.eu-central-1.compute.internal" time="0.024">
+  <properties/>
+  <testcase name="uniform drop is flagged REGRESSION()" classname="com.janus.ComparatorTest" time="0.016"/>
+  <testcase name="noise floor from identical control runs is near zero()" classname="com.janus.ComparatorTest" time="0.002"/>
+  <testcase name="identical runs are NO_CHANGE()" classname="com.janus.ComparatorTest" time="0.002"/>
+  <testcase name="real-but-tiny drop below the noise floor is NOT a regression()" classname="com.janus.ComparatorTest" time="0.003"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

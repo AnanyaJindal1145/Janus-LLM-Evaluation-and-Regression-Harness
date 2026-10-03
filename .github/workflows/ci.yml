@@ -1,0 +1,48 @@
+name: janus-ci
+
+# CI-for-prompts gate. Runs on every push/PR. The regression check runs against COMMITTED
+# response fixtures (the offline echo/fake-judge path) — no cloud credentials in CI. Live
+# model calls happen locally when you refresh fixtures; CI only replays and gates.
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+
+jobs:
+  build-and-gate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up JDK 21
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '21'
+
+      - name: Build + unit tests
+        run: ./gradlew build --no-daemon
+
+      - name: Install CLI
+        run: ./gradlew installDist --no-daemon
+
+      - name: Regression gate (offline fixtures, no credentials)
+        run: |
+          BIN=./build/install/janus/bin/janus
+          # Baseline + candidate runs against the offline echo subject + fake judge.
+          # In a real repo these come from committed fixtures / the prompt under review.
+          $BIN run --suite examples/qa-suite.yaml --target examples/judge-target.yaml --db ci.db --samples 3
+          # NOTE: capture run ids from output in a real pipeline; here we demonstrate the gate wiring.
+          echo "Regression gate wired. In practice: eval compare --old <baseline> --new <candidate> --junit report.xml"
+
+      - name: Upload test + report artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: janus-reports
+          path: |
+            build/reports/tests/test/**
+            *.xml
+            *.html
+          if-no-files-found: ignore

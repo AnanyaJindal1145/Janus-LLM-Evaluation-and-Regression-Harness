@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.janus.RunStoreTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2026-10-02T22:35:23" hostname="ip-10-0-4-125.eu-central-1.compute.internal" time="0.215">
+  <properties/>
+  <testcase name="save then load round-trips samples and scores()" classname="com.janus.RunStoreTest" time="0.215"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

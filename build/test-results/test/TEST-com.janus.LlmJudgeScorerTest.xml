@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.janus.LlmJudgeScorerTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2026-10-02T22:35:23" hostname="ip-10-0-4-125.eu-central-1.compute.internal" time="0.016">
+  <properties/>
+  <testcase name="fake judge fails a wrong answer()" classname="com.janus.LlmJudgeScorerTest" time="0.003"/>
+  <testcase name="parses a json object wrapped in prose or markdown()" classname="com.janus.LlmJudgeScorerTest" time="0.003"/>
+  <testcase name="unknown label scores zero()" classname="com.janus.LlmJudgeScorerTest" time="0.003"/>
+  <testcase name="fake judge passes a correct answer and persists reasoning()" classname="com.janus.LlmJudgeScorerTest" time="0.002"/>
+  <testcase name="unparseable judge output scores zero with a diagnostic()" classname="com.janus.LlmJudgeScorerTest" time="0.003"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

@@ -1,0 +1,47 @@
+name: qa-gold
+version: "1"
+labels: [PASS, FAIL]
+# Hand-labeled BEFORE looking at any judge output. `output` is the exact response text
+# that was labeled — the judge grades this same text. Deliberately spans the quality range
+# (correct, wrong, and borderline) so kappa is meaningful, not a base-rate artifact.
+gold:
+  - caseId: capital-france
+    input: "What is the capital of France?"
+    expected: "Paris"
+    output: "Paris"
+    label: PASS
+  - caseId: capital-japan
+    input: "What is the capital of Japan?"
+    expected: "Tokyo"
+    output: "Tokyo"
+    label: PASS
+  - caseId: capital-italy
+    input: "What is the capital of Italy?"
+    expected: "Rome"
+    output: "Rome is the capital of Italy."
+    label: PASS
+  - caseId: capital-spain
+    input: "What is the capital of Spain?"
+    expected: "Madrid"
+    output: "Barcelona"
+    label: FAIL
+  - caseId: math-sum
+    input: "What is 2 + 2?"
+    expected: "4"
+    output: "5"
+    label: FAIL
+  - caseId: math-product
+    input: "What is 6 times 7?"
+    expected: "42"
+    output: "42"
+    label: PASS
+  - caseId: capital-germany
+    input: "What is the capital of Germany?"
+    expected: "Berlin"
+    output: "I think it might be Munich."
+    label: FAIL
+  - caseId: capital-canada
+    input: "What is the capital of Canada?"
+    expected: "Ottawa"
+    output: "Ottawa"
+    label: PASS
